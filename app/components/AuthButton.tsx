@@ -7,12 +7,23 @@ export default function AuthButton() {
 
   if (session) {
     return (
-      <div>
-        <p>Signed in as {session.user?.email}</p>
-        <button onClick={() => signOut()}>Sign out</button>
+      <div className="flex items-center gap-2">
+        <button
+          className="bg-blue-500 text-white px-4 py-2 rounded"
+          onClick={() => signOut()}
+        >
+          Sign out
+        </button>
       </div>
     );
   }
 
-  return <button onClick={() => signIn("google")}>Sign in with Google</button>;
+  return (
+    <button
+      className="bg-blue-500 text-white px-4 py-2 rounded text-sm"
+      onClick={() => signIn("google")}
+    >
+      Sign in with Google
+    </button>
+  );
 }

@@ -28,7 +28,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SessionWrapper>{children}</SessionWrapper>
+        <SessionWrapper>
+          <div className="min-h-screen flex flex-col items-center justify-start bg-gray-100 p-4">
+            {children}
+          </div>
+          <footer className="w-full mt-auto bg-white p-4 text-center text-gray-500">
+            &copy; 2025 Stories
+          </footer>
+        </SessionWrapper>
       </body>
     </html>
   );
